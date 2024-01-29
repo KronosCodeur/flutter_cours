@@ -10,12 +10,7 @@ class Exemple1 extends StatelessWidget {
         title: const Text('Material App Bar'),
       ),
       body: const Center(
-        child: Column(
-          children: [
-            ShowText(),
-            ShowImage(),
-          ],
-        ),
+        child: ShowButton(),
       ),
     );
   }
@@ -27,7 +22,7 @@ class ShowText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text(
-      "Bienvenue au cours de flutter !!!",
+      "Bienvenue au cours de flutter",
       style: TextStyle(
           color: Colors.teal, fontWeight: FontWeight.bold, fontSize: 24),
     );
@@ -47,11 +42,27 @@ class ShowImage extends StatelessWidget {
   }
 }
 
-class ShowBottom extends StatelessWidget {
-  const ShowBottom({super.key});
+class ShowIcon extends StatelessWidget {
+  const ShowIcon({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Icon(
+      Icons.code_rounded,
+      color: Colors.red,
+      size: 150,
+    );
+  }
+}
+
+class ShowButton extends StatelessWidget {
+  const ShowButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {},
+      child: Text("Click on meeeee !!!"),
+    );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:composant/exemple1.dart';
+import 'package:composant/exemple2.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      home: Exemple1(),
+      home: Exemple2(),
     );
   }
 }

@@ -7,4 +7,5 @@ class AssetsRes {
   static const String PLUGIN_NAME = 'composant';
   static const String PLUGIN_VERSION = '1.0.0+1';
   static const String LOGOV2 = 'assets/images/logov2.png';
+  static const String TRIP = 'assets/images/trip.jpg';
 }
