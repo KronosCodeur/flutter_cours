@@ -236,6 +236,9 @@ class ShowForm extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(
+            height: 5,
+          ),
           Row(
             children: [
               const Expanded(
