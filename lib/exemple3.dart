@@ -16,65 +16,75 @@ class _Exemple3State extends State<Exemple3> {
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: Container(
+        alignment: Alignment.center,
         width: size.width,
         height: size.height,
-        padding: EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 25),
         decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight,
-                colors: [Colors.greenAccent, Colors.tealAccent, Colors.teal])),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Material(
-              elevation: 10,
-              borderRadius: BorderRadius.circular(40),
-              child: Container(
+            image: DecorationImage(
+                image: AssetImage(
+                  AssetsRes.TRIP,
+                ),
+                fit: BoxFit.cover,
+                opacity: 0.4),
+            color: Colors.black),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
                 width: size.width / 2,
                 height: size.width / 2,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  image: DecorationImage(
-                      image: AssetImage(AssetsRes.FLUTTER), fit: BoxFit.cover),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.tealAccent.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 10,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(20),
                 ),
+                padding: const EdgeInsets.all(20),
+                child: Image.asset(AssetsRes.FLUTTER),
               ),
-            ),
-            Gap(10),
-            Text(
-              "Flutter Login",
-              style: GoogleFonts.poppins(
-                  color: Colors.black,
-                  fontSize: 45,
-                  fontWeight: FontWeight.w600),
-            ),
-            Text(
-              "Connect to your account",
-              style: GoogleFonts.poppins(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400),
-            ),
-            Gap(50),
-            TextFormField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                  hintText: "Pseudo",
-                  prefixIcon: CircleAvatar(
-                    radius: 32,
+              const Gap(10),
+              Text(
+                "Flutter Login",
+                style: GoogleFonts.poppins(
+                    color: Colors.tealAccent,
+                    fontSize: 45,
+                    fontWeight: FontWeight.w600),
+              ),
+              Text(
+                "Connect to your account",
+                style: GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
+              ),
+              const Gap(50),
+              TextFormField(
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                  hintText: "Username",
+                  prefixIcon: const CircleAvatar(
+                    radius: 25,
                     backgroundColor: Colors.black,
                     child: Icon(
                       Icons.group_outlined,
                       color: Colors.tealAccent,
-                      size: 40,
+                      size: 30,
                     ),
                   ),
                   contentPadding: EdgeInsets.zero,
-                  constraints: BoxConstraints(minHeight: 50),
+                  constraints: const BoxConstraints(minHeight: 50),
                   hintStyle: GoogleFonts.poppins(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.w600,
-                      fontSize: 25),
+                      fontSize: 20),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                     borderSide: const BorderSide(color: Colors.black),
@@ -83,41 +93,51 @@ class _Exemple3State extends State<Exemple3> {
                     borderRadius: BorderRadius.circular(50),
                     borderSide: const BorderSide(color: Colors.black),
                   ),
-                  enabled: true),
-            ),
-            Gap(10),
-            TextFormField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                hintText: "Password",
-                prefixIcon: CircleAvatar(
-                  radius: 32,
-                  backgroundColor: Colors.black,
-                  child: Icon(
-                    Icons.lock_outline_rounded,
-                    color: Colors.tealAccent,
-                    size: 40,
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: const BorderSide(color: Colors.tealAccent),
+                  ),
+                  enabled: true,
+                ),
+              ),
+              const Gap(10),
+              TextFormField(
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                  hintText: "Password",
+                  prefixIcon: const CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Colors.black,
+                    child: Icon(
+                      Icons.lock_outline_rounded,
+                      color: Colors.tealAccent,
+                      size: 30,
+                    ),
+                  ),
+                  contentPadding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(minHeight: 50),
+                  hintStyle: GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: const BorderSide(color: Colors.black),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: const BorderSide(color: Colors.black),
+                  ),
+                  enabled: true,
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: const BorderSide(color: Colors.tealAccent),
                   ),
                 ),
-                contentPadding: EdgeInsets.zero,
-                constraints: BoxConstraints(minHeight: 50),
-                hintStyle: GoogleFonts.poppins(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 25),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(50),
-                  borderSide: const BorderSide(color: Colors.black),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(50),
-                  borderSide: const BorderSide(color: Colors.black),
-                ),
-                enabled: true,
               ),
-            ),
-            Gap(30),
-            ElevatedButton(
+              const Gap(30),
+              ElevatedButton(
                 style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(Colors.black),
                     elevation: MaterialStatePropertyAll(10)),
@@ -126,14 +146,16 @@ class _Exemple3State extends State<Exemple3> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Text(
-                    "CONNEXION",
+                    "Connexion",
                     style: GoogleFonts.poppins(
                         color: Colors.tealAccent,
                         fontWeight: FontWeight.w600,
-                        fontSize: 25),
+                        fontSize: 20),
                   ),
-                ))
-          ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
